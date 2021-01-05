@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+  <body class="bg-info">
+    <div class="container">
+      <h3>Aspect ratios, responsive</h3>
+      <p>19by4:</p>
+      <div class="embed-responsive embed-responsive-4by3">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe></div>
+      <h2>Aspect ratio 16:9</h2>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+  <br>
+    
+  <h2>Aspect ratio 21:9</h2>
+  <div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+</div>
+
+    </div><div class=" mb-3 container">
+  <h3 class="text-warning text-center">Icons</h3>
+  <p>Cloud logo<i class="fas fa-cloud"></i></p>
+  <p>cars logo<i class="fas fa-car"></i></p>
+  <p>BArs <i class="fas fa-bars"></i></p>
+  <i class="fas fa-file"></i>
+  <i class="fas fa-coffee"></i>
+  </div>
+  <div class="media border mb-2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjOA4kut5qdmzIZH3mmtH0naKJxTngOIbqYriMKn740it9FLm&s" alt="loading image" class="mr-2 mt-2 rounded-circle ml-3" style="width:100px"> 
+    <div class="media-body">
+      <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+    <p>Lorem ipsum...</p>
+    </div>
+  </div>
+  <div class="media border p-3 bg-primary">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjOA4kut5qdmzIZH3mmtH0naKJxTngOIbqYriMKn740it9FLm&s" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+  <div class="media-body">
+    <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>
+    <p>Lorem ipsum...</p>
+    <div class="media p-3 bg-warning">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjOA4kut5qdmzIZH3mmtH0naKJxTngOIbqYriMKn740it9FLm&s" alt="Jane Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+      <div class="media-body">
+        <h4>Jane Doe <small><i>Posted on February 20 2016</i></small></h4>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div> 
+  </div>
+</div>
+  <div class="media border p-3 bg-success">
+  <div class="media-body">
+    <h4>John Doe <small><i>The image comes after the media body in order of coding here
+      </i></small></h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, illum ratione facilis distinctio magni aperiam ipsam maxime beatae placeat delectus aliquam accusamus nobis laborum rerum qui vero ad deserunt commodi?</p>
+  </div>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPjOA4kut5qdmzIZH3mmtH0naKJxTngOIbqYriMKn740it9FLm&s"img_avatar3.png" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:60px;">
+</div>
+<div>
+    <h4><strong>Proper</strong> image link paths</h4>
+    <p>Same folder i.e: src='img.jpg'</p>
+<div class="imagepaths">
+
+<img class="myimage" src="movies (1).jpg" alt="image loading">
+<img class="myimage" src="movies (2).jpg" alt="image loading">
+<img class="myimage" src="movies (3).jpg" alt="image loading">
+<img class="myimage" src="movies (4).jpg" alt="image loading">
+<img class="myimage" src="movies (5).jpg" alt="image loading">
+</div></div>
+<div>
+   
+    <p>A folder inside the main folder i.e: src='images/img.jpg'</p>
+<div class="imagepaths1">
+
+<img class="myimage" src="New folder/games (1).jpg" alt="image loading">
+<img class="myimage" src="New folder/games (2).jpg" alt="image loading">
+<img class="myimage" src="New folder/games (3).jpg" alt="image loading">
+
+</div></div>
+<div>
+   <h4>These are from the aspectratio to newfolder to inner images</h4>
+    <p>A folder inside the current folder and one level insidei.e: src='../images/img.jpg'</p>
+<div class="imagepaths">
+
+<img class="myimage" src="./New folder/games (3).jpg" alt="image loading">
+<img class="myimage" src="./movies (4).jpg" alt="image loading">
+
+
+</div></div>
+  
+<div class="audio-files">
+  <h3>Audio paths</h3>
+  <p>Using source tags and src and type attribute</p>
+  <p><strong>Best Practice</strong></p>
+  <audio controls>
+    <source src="./New folder/audio/Burning Spear - Dry and Heavy.mp3" type="audio/mpeg">
+      please <a href="#" download="">download</a>
+  </audio>
+  <p><strong><strike>BadPractice</strike></strong></p>
+  <audio src="./New folder/audio/Burning Spear - Door Peep - Live in Paris  Zenith 1988.mp3" type="audio/mpeg" controls></audio>
+</div>
+<div class="jumbotron">
+  <h3>Videos with source attributes</h3>
+  <p>Good practice with source</p>
+  <video class="embed-responsive embed-responsive-4by3" controls poster="./New folder/welding poster.png" >
+    <source src="./New folder/videos/y2mate.com - how_not_to_weld_most_common_mig_welding_mistakes_Xod-ByrxHg4_360p.mp4" type="video/mp4">
+  </video>
+</div>
+  </body></html>

@@ -1,0 +1,23 @@
+.myimage{
+    width: 200px;
+    height: 200px;
+}
+.imagepaths{
+    display: flex;
+    justify-content:space-between;
+    align-items:center ;
+    flex-wrap: wrap;
+
+}
+.imagepaths1{
+    display: flex;
+    justify-content:space-around;
+    align-items:center ;
+    flex-wrap: wrap;
+
+}
+audio{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 7px;
+}

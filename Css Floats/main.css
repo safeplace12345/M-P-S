@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.item{
+    display: inline;
+    border: 1px solid red;
+    padding: 10px;
+    float: left;
+    font-size: 5rem;
+}
+.item:nth-child(odd){
+background-color: gray;
+/* float: right; */
+}
+body{
+    margin: 10px;
+    background-color: yellow;
+
+}
+#num4,#num7,#num2,#num1{
+    clear: left;
+}
+
+

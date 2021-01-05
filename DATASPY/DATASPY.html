@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+  body{
+    position:relative;
+    background-color:lavender;}
+  </style>
+  </head>
+  <body data-spy="scroll" data-offset="50" data-target=".navbar">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <a href="#" class="navbar-brand">DATASPY</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#section1" class="nav-link">Section 1</a></li>
+           <li class="nav-item"><a href="#section2" class="nav-link">Section 2</a></li>
+           <li class="nav-item"><a href="#section3" class="nav-link">Section 3</a></li>
+           <li class="nav-item dropdown" ><a href="#section4" class="nav-link dropdown-toggle" data-toggle= "dropdown">Section 4</a>
+             <div class="dropdown-menu">
+               <a href="#paddings" class="dropddown-item">Paddings</a>
+               <br><a href="#" class="dropddown-item">DROP</a>
+             </div>
+           </li>
+      </ul>
+    </nav>
+    
+    <div class="container-fluid bg-success" id="section1" style="padding-top:70px;padding-bottom:70px";>
+      <h1>Section 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 3</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section2" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section3" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
+  <h1>Section 4 Submenu 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    </div> 
+      <div class="container-fluid" id="paddings">
+        <div class="pt-4 bg-warning">I only have a top padding (1.5rem = 24px)</div>
+<div class="p-5 bg-secondary">I have a padding on all sides (3rem = 48px)</div>
+<div class="m-5 pb-5 bg-info">I have a margin on all sides (3rem = 48px) and a bottom padding (3rem = 48px)</div><br>
+        <h4 class="mx-auto">CenteredText</h4>
+      </div>
+      <div class="container" id="paddings">
+  <h1>Vertical Align</h1>
+  <p>Change the alignment of elements with the align classes (only works on inline, inline-block, inline-table and table cell elements):</p>
+  <span class="align-baseline">baseline</span>
+  <span class="align-top">top</span>
+  <span class="align-middle">middle</span>
+  <span class="align-bottom">bottom</span>
+  <span class="align-text-top">text-top</span>
+  <span class="align-text-bottom">text-bottom</span>
+</div>
+      <button type="button" class="btn btn-warning float-right
+                                   " href="https://codepen.io/KatoEssss/details/jOWXBVX" target="_blank">Nextpage</button>
+  </body>
+  </html>

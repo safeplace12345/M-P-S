@@ -1,0 +1,30 @@
+/*
+	Comment
+*/
+
+a { /* Comment */ color: /* Comment */ Red; }
+
+.TestClass {
+	color: Black;
+	background-color: White;
+	text-align: left;
+}
+ body {
+ 	min-height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	color:white;
+ }
+ .colorbtn{
+ 	padding : 2px;
+	border : solid 2px white;
+	border-radius:7px;
+	background-color:rgb(0,0,0,0.4);
+	color:white;
+	cursor:pointer;
+
+ }
+ .colorbtn:hover{
+ 	background-color:black;
+ }

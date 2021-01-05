@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+        // xhr.open( "GET", "http://sss/movie.json" ); // <-- Try this one to get to the oneeror handler
+        xhr.open( "GET", "movie.json" );
+        xhr.onload = function(event){
+            // console.log(xhr.status, xhr.statusText);
+            if ( xhr.status === 200 ){
+                const data = xhr.responseText;
+                console.log(data, typeof data);
+                const decoded = JSON.parse(data);
+                console.log( decoded, typeof decode );
+            }
+        }
+        xhr.onerror = function(error){
+            alert("Something went wrong!");
+        }
+        xhr.send();
+    </script>
+</body>
+</html>

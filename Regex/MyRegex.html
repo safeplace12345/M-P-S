@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="#">
+	<title>My Regex.js</title>
+</head>
+<body style="background-color:#ff00A8; color:#FFF;">
+<div class="container mx-auto">
+<h1>Regular Expressions.JS</h1>
+</div>
+<div class="jumbotron" style="color:#000">
+<div class="row">
+<div class="col-md-4">
+<h2>Using the .test() method</h2>
+<p>JavaScript has multiple ways to use regexes.
+ One way to test a regex is using the .test() method.
+  The .test() method takes the regex,
+   applies it to a string 
+   (which is placed inside the parentheses), 
+   and returns true or false if your pattern finds something or not.
+   </p>
+   <p id="reg1"></p>
+   
+   <h2 class="text text-danger">NOTE:</h2>
+   <p>Any other forms of "Kevin" will not match. For example, 
+   the regex /Kevin/ will not match "kevin" or "KEVIN".<br><br> Example:
+   </p>
+   <button type="button" class="btn btn-success" 
+   onclick="myReg1()">Click here</button>
+   <p id="reg2"></p>
+   </div>
+<div class="col-md-4">
+<h2 class="text text-danger">Search patterns</h2>
+<p>Using the .test() method to test 
+multiple results with th OR (|) operator<br>
+This operator matches patterns either before or after it. 
+For example, if you wanted to match "yes" or "no",
+ the regex you want is /yes|no/.
+
+You can also search for more than just two patterns. 
+You can do this by adding more patterns with 
+more OR operators separating them, like /yes|no|maybe/.</p>
+<p id ="reg3"></p>
+<button onclick="myReg2()" type="button" class="btn btn-warning">Click here</button>
+</div>
+<div class="col-md-4"><h2 class="text text-danger">Ignoring case variations</h2>
+<p>You can match both cases using what is called a flag.
+ There are other flags but here you'll focus on the flag
+  that ignores case - the i flag. You can use it by
+   appending it to the regex. An example of using this flag is
+    /ignorecase/i. This regex can match the strings 
+"ignorecase", "igNoreCase", and "IgnoreCase".</p>
+<button onclick="myReg3()" type="button" class="btn btn-warning">Click here</button>
+<p id ="reg4"></p>
+</div>
+</div>
+</div>
+<div class="container" style="background-color:#376">
+<h2>Regular Expressions: Extract Matches</h2>
+<p>So far, you have only been checking if a pattern exists or
+ not within a string. 
+ You can also extract the actual matches you found with the 
+ .match() method.
+To use the .match() method, apply the method on a string and
+ pass in the regex inside the parentheses.
+Here's an example:</p>
+<button onclick="mymatch()" type="button" class="btn btn-warning">Click here</button>
+<p id="match1"></p><br><br>
+
+<h2>Regular Expressions: Extract Multiple Matches</h2>
+<p>So far, you have only been able to extract or
+search a pattern once.</p><pre>
+let testStr = "Repeat, Repeat, Repeat";
+let ourRegex = /Repeat/;
+testStr.match(ourRegex);
+// Returns ["Repeat"]
+
+To search or extract a pattern more than once, you can use the g flag.
+
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "repeat", "RepeaT"]</pre>
+
+<button onclick="mymatch1()" type="button" class="btn btn-warning">Click here</button>
+<p id="match2"></p>
+</div>
+<div class="container-fluid">
+<h2>Match Anything with Wildcard Period</h2>
+<p>The wildcard character . will match any one character.
+ The wildcard is also called dot and period. 
+ You can use the wildcard character just like any other 
+ character in the regex. For example, 
+ if you wanted to match "hug", "huh", "hut", and "hum", 
+ you can use the regex /hu./ to match all four words.</p>
+ <pre>let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(humStr); // Returns true
+huRegex.test(hugStr); // Returns true
+</pre>
+<button onclick="mymatch2()" type="button" class="btn btn-warning">Click here</button>
+ <p id="match3"></p>
+ </div>
+<script src="MyRegexjava.js"></script>
+</body>
+</html>

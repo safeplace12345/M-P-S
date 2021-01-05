@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="./bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+ <meta name="viewport" width="device-width initial-scale=1.0">
+  <meta charset="utf-8">
+    
+  </head>
+  <body id="main">
+    <nav class=" navbar navbar-dark bg-dark fixed-bottom" >
+      <a href='/moreBootsrap.html' class="navbar-brand" >More Bootstrap</a>
+      <ul class="navbar-nav">
+        <li class="nav-item" ><a href="./Aspectratios.html" class='nav-link' >Videos</a></li>
+      </ul>
+    </nav>
+    <div id="header"class="container" class="btn btn-warning">
+      <h1>BootSTRAP<small>smalls too</small></h1>
+      <button id="changebg" type="button" onclick="changebg()" class="btn btn-secondary" >Dark mode</button>
+      
+      <button id="revert" type="button" onclick="revert()" class=" btn btn-primary"
+      >Revert Hue</button>
+    </div>
+  
+  <div class="row">
+    <div class="col-sm-5" style="background-color:gray">
+      <p id='try1'></p>
+      <button type="button" onclick='displayDate()'class="btn btn-warning">Schedule Date</button>;
+      
+    </div>
+      <div class="col-sm-7" style="background-color:chocolate;">
+        <p id='try2'>Here we go now !!!!!!!!!!!!!</p>
+        <button type="button" onclick="gocheck()">Try</button>
+      </div>
+    </div>
+  <div class="container table-responsive" id="mytable" style="background-color:chocolate;">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id='try3' value='John'>John</td>
+        <button type="button" style="display:inline" class="btn btn-primary" onclick="trythis2()">Change Attribute John</button>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container-fluid">
+  <h2>Circle</h2>
+  <p>The .img-circle class shapes the image to a circle (not available in IE8):</p>            
+  <img src="https://www.w3schools.com/html/img_girl.jpg" id='imgdemo'class="img-rounded img-responsive"style="height:250px" onmouseover="enlarge = (this) => {
+    var x = document.getElementById('imgdemo')
+    x.style.transform = 'rotate(30deg)'
+  } " ​> 
+    <button type="button" onclick="trythis3()">Try to see d.write('')</button>
+    
+</div>
+  <div class="container" id="response">
+    <h1>Responsive videos</h1>
+    <span id="span">More Videos <a href="./Aspectratios.html">  &rArr;</a></span>
+    <div class="embed-responsive embed-responsive-16by9" >
+   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+</div>
+  <div class="alert alert-warning">
+    <strong>Warning</strong> Here is a<a href="#" class="alert-link"> LINK!</a> 
+  </div>
+<div class="alert alert-success">
+    <strong>Warning</strong> Here is a<a href="#" class="alert-link"> LINK!</a> 
+  </div>
+  <div class="alert alert-info alert-dismissible">
+    <a href="#" data-dismiss="alert" class="close">&times</a>
+    This is text for information and closable link
+  </div>
+  <div class="alert alert-danger alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert">&times</a>
+    Another one
+  </div>
+  <div class="row">
+  <div class="btn-group-lg col-md-8">
+    <button class="btn btn-primary">Apple</button>
+  <button class="btn btn-primary">Samsung</button>
+    <button class="btn btn-primary">Sony</button></div>
+</div>
+  
+  <div class="btn-group ">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sony<span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu"><li>
+      <a href="#">Dropdown</a>
+      <a href="#">Button</a>
+    </li></ul>
+  </div>
+</div> 
+  
+      <div class="container" style="background-color:white;">
+        <p>Envelope glyphicon <span class="glyphicon glyphicon-envelope"></span></p>
+        <p>Enevlope links <a href="#"><span class="glyphicon glyphicon-envelope"></span></a></p>
+        <p>Search glyphicon <span class="glyphicon glyphicon-search"></span></p>
+        <p>search button in button <button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search"></span> Search</button></p>          <p>Printing glyphicons <span class="glyphicon glyphicon-print"></span></p>  </div>
+        <div class="container"> <h1>Example <span class="label label-default">New</span></h1>
+<h2>Example <span class="label label-warning">New</span></h2>
+<h3>Example <span class="label label-success">New</span></h3>
+<h4>Example <span class="label label-danger">New</span></h4>
+<h5>Example <span class="label label-info">New</span></h5>
+<h6>Example <span class="label label-basic">New</span></h6> </div>
+<div class="container-fluid" class='bg bg-secondary p-5'>
+  <a href ='#' name='Ford'>Ford</a><br>
+  <a href ='#' name='mustang'>mustang</a><br>
+  <a href ='#' name='aston'>aston</a><br>
+  <a href ='#' name='Ford'>Chevy</a><br>
+  <button type="button" class="btn " onclick="trythis5()">Count A's with names</button>
+  <p id="try5"style="background-color:gray; color:white; font-size:3rem; "></p>
+  <script>
+    function trythis5(){
+      
+      let x = document.anchors.length;
+      document.getElementById('try5').innerHTML = x;
+    }
+  </script>
+  <div id="paragraphs">
+    <p>hello</p>
+    <p>World</p>
+    <p>Welcome</p>
+    <p id='result1'style="color:white; background-color:black"></p>
+    <script>
+      let x = document.getElementById('paragraphs');
+      let y = x.getElementsByTagName('p');
+      document.getElementById('result1').innerHTML = 
+      'The second paragraph in id =paragraph is ' + y[1].innerHTML;
+    </script>
+  </div>
+</div>
+<div class="jumbotron">
+  <h2>Finding all form elements with document.forms['ID']</h2>
+  <form action="submit" id='frm1'>
+    <label for="fname">Firstname</label>
+    <input type="text" value="Dobson" name='fname'>
+    <label for="sname">Secondname</label>name</label>
+    <input type="text" value="Emily" name='sname'>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+  </form>
+  <button type="button" class="btn btn-warning" onclick='forms1()'>Check values</button>
+  <p id="result2" class="bg bg-primary"></p>
+  <script>
+    
+  </script>
+  
+
+</div>
+<h1 >HTML events</h1>
+<div id="mouse" class='jumbotron' style='background-color:gray; display: flex;
+position: relative;'>
+  
+<div id="onmouseover"  onmouseover="mover(this)" onmouseout="mout(this)">MOUSE OVER</div>
+<div id="mousedown" onmousedown="mdown(this)">Thank you!</div>
+
+</div>
+<div>
+  <h2>JavaScript addEventListener()</h2>
+
+<p>This example uses the addEventListener() method to add two click events to the same button.</p>
+
+<button id="newBtn" class='btn btn-lg btn-success' >Several events</button>
+<p id="events" class="text text-danger"></p>
+
+</div>
+<div class = 'row'>
+  <div id='contain1'class="col-sm-6 ">
+    <p id="tests">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatem a nam non esse, similique odio ea eligendi possimus animi ex. Fuga itaque dolorum doloremque ullam aut amet repellat illo?</p>
+    <button class="btn btn-primary btn-lg"id="deletetext2" type="button">Delete text </button>
+  
+  </div>
+  <div class="col-md-6 "id="contain2" style="border: 3px solid black ; padding: 50px;">
+    <p id="tests2" style="padding-left: 5px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, temporibus. Explicabo, nobis blanditiis! Impedit rem sit in nesciunt nulla reiciendis ducimus optio, necessitatibus, quia accusantium, voluptatibus neque corporis aliquid similique.</p>
+    <button class="btn btn-success btn-lg"id="replacetext" type="button">Replace text </button>
+  </div>
+</div>
+<div class="container-fluid">
+  <h1>Trackdown all paragraphs in document</h1>
+  <p>How is it going so far</p>
+  <p><b>Stay focused</b></p>
+  <p id="allPs"></p>
+  <button type="button" onclick="changePs()" class="btn btn-warning">Hue change</button>
+  <h3>Popup boxes</h3>
+  <p id="confirm"></p>
+  <input type="button" value="Confirm box dialog" onclick="confirmit()">
+  <p id="promptbox" style="font-size: 1.5rem;"></p>
+  <input type="button" value="Login with promptbox" onclick="login()">
+  <h3>Terminate the alert box in less than 3 seconds</h3>
+</div><div class="alerts">
+  <input type="button" value="Alertbox.js" onclick=" setTimeout(alert_me,3000)">
+  <input type="button" value="Kill alert box"onclick='clearTimeout(alert_me)' >
+</div>
+<div>
+  <h3>The current time using a clearInterval function</h3>
+  <h2 id="timer"></h2>
+  <button type="button" onclick="clearInterval(mytimer)">Stop watch</button>
+</div>
+  <script>
+    
+  </script>
+</div>
+<script src="./bootstrap.js"></script>
+   </body>     
+  </html>

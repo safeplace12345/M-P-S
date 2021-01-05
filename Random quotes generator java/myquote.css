@@ -1,0 +1,41 @@
+/*
+	Comment
+*/
+
+a { /* Comment */ color: /* Comment */ Red; }
+
+.TestClass {
+	color: Black;
+	background-color: White;
+	text-align: left;
+}
+body{
+	background-color:#6Df6F6;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-transform:capitalize;
+	font-family:monospace, sans-serif;
+	font-weight:500;
+	min-height:100vh;
+}
+.container-fluid{
+text-align:center;
+background-color:#fff;
+width:600px;
+border-radius:7px;
+
+	
+}
+
+.quotebtn{
+	background-color:#6DD460;
+	color:#fff;
+	border:none;
+	cursor:pointer;
+}
+.quote{
+	border-left: solid 5px #6DD460;
+	padding:auto;
+	background-color:#6Df6f6;
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" width="device-width initial-scale=1.0">
+  <meta charset="utf-8">
+ 
+</head>
+<body>
+  
+<div>
+    <h1>Object Oriented Programming</h1>
+
+    <!--IIFE (Immediately excuted functions)-->
+    <h2>IIFE(Immediate execution)</h2>
+    <pre>
+        (function (){
+            return 'Immediately executed'
+        })();
+    </pre>
+    <script>
+        (function (){
+            console.log( 'Immediately executed')
+        })();
+    </script>
+    <h2>Create an IIFE module pattern</h2>
+    <pre>let moduleMixin = (function (){
+        return {
+            isCuteMixin: function(obj){
+                obj.iscute = () => {
+                    return true;
+                };
+            },
+            flyMixin : (obj) =>{
+                obj.fly = () => {
+                    console.log('I can fly')
+                }
+            }
+        };
+            
+    })();</pre>
+    <script>
+let moduleMixin = (function (){
+    return {
+        isCuteMixin: function(obj){
+            obj.iscute = () => {
+                return true;
+            };
+        },
+        flyMixin : (obj) =>{
+            obj.fly = () => {
+                console.log('I can fly')
+            }
+        }
+    };
+        
+})();
+// invoke the method here
+
+// function to order tea for OurTeam
+
+const carType = () => {
+    return 'Automobile'
+}
+console.log(carType)
+const getNewCar = (num0fCars) => {
+    const newOrder = [];
+    for(let car= 0; car < num0fCars; car+=1){
+        const newCar = carType();
+        newOrder.push(newCar)
+    }
+return newOrder;
+}
+
+const newOrders = getNewCar(10);
+console.log(newOrders)
+
+    </script>
+    <h2>Tea maker function</h2>
+    <p>Function to define how much and what types of tea are preferred by our team</p>
+    <script>
+        const prepareGreenTea = () => 'GreenTea';
+        const prepareBlackTea = () => 'BlackTea';
+
+        function makeorder(prepareTea, numOfCups){
+            let newOrder =[]
+
+            for(let i = 1; i < numOfCups;i++){
+                let teaCup = prepareTea();
+                newOrder.push(teaCup)
+            }
+            return newOrder;
+        }
+        const blackTea = makeorder(prepareBlackTea,7);
+        const greentea =makeorder(prepareGreenTea,8);
+        console.log(greentea);
+        console.log(blackTea);
+    </script>
+    <h1>More function object Oriented Programming</h1>
+    <script>
+const Window = function(tabs){
+    this.tabs = tabs;
+}
+Window.prototype.join = function(othertab){
+    this.tabs = this.tabs.concat(othertab.tabs);
+    return this;
+}
+Window.prototype.tabOpen = function(){
+    this.tabs.push('NewTab');
+    return this;
+}
+Window.prototype.tabClose = function(index){
+   // var tabsopennow = this.tabs.slice(0,index);
+    //this.tabs.slice(0,index);
+    //return tabsopennow;
+    var tabsclosed = this.tabs.slice(index +1)
+    //return tabsclosed;
+
+    this.tabs = tabsclosed;
+    return this;
+}
+const socialWindow = new Window(['facebook','whatsapp','twitter','Amazon']);
+const newsWindow = new Window(['News','Euronews','Aljazeera','Skynews']);
+const videoWindow = new Window(['youtube','Vimeo','Mtv']);
+
+
+
+console.log(newsWindow);
+const finalwindow = socialWindow.tabOpen().join(videoWindow.tabOpen()).join(newsWindow.tabClose(1));
+console.log(finalwindow);
+// A global variable is changed here 'changeval'
+var changeval = 4;
+// 4 is the initial value
+ function incrementval(){
+     return changeval + 1;
+ }
+ // store the new value in new variable
+ var newChangedVal = incrementval();
+ console.log('This is the new value = ' + newChangedVal);
+console.log('Original value = '+changeval)
+// Avoiding changes to global variables, using PARAMETRES
+
+function increment_val(value){
+    return value + 1;
+}
+//Declaration of new value
+var newChanged_Val = increment_val(changeval);
+console.log('newChanged_Val = ' + newChanged_Val)
+// More complex data with Functional programing
+
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+// Add A book function
+function add(arr,bookName){
+    let newArr = [...arr];
+    newArr.push(bookName);
+    return newArr;
+}
+//remove a book here
+function remove(arr,bookName){
+    let newArr = [...arr];
+    let bookIndex = newArr.indexOf(bookName);
+    if(bookIndex >= 0){
+        newArr.splice(bookIndex,1)
+    }
+    return newArr
+}
+// create a new book list
+var newbooklist = add(bookList,'I found you')
+console.log('My newbooklist is ' + newbooklist)
+var newerBooklist = remove(bookList,'On The Electrodynamics of Moving Bodies');
+console.log('On The Electrodynamics of Moving Bodies HAS BEEN REMOVED' + newerBooklist)
+
+// The global variable
+var watchList = [
+  {
+    "Title": "Inception",
+    "Year": "2010",
+    "Rated": "PG-13",
+    "Released": "16 Jul 2010",
+    "Runtime": "148 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Christopher Nolan",
+    "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+    "Plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+    "Language": "English, Japanese, French",
+    "Country": "USA, UK",
+    "Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    "Metascore": "74",
+    "imdbRating": "8.8",
+    "imdbVotes": "1,446,708",
+    "imdbID": "tt1375666",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Interstellar",
+    "Year": "2014",
+    "Rated": "PG-13",
+    "Released": "07 Nov 2014",
+    "Runtime": "169 min",
+    "Genre": "Adventure, Drama, Sci-Fi",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan, Christopher Nolan",
+    "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+    "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "Language": "English",
+    "Country": "USA, UK",
+    "Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
+    "Metascore": "74",
+    "imdbRating": "8.6",
+    "imdbVotes": "910,366",
+    "imdbID": "tt0816692",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "The Dark Knight",
+    "Year": "2008",
+    "Rated": "PG-13",
+    "Released": "18 Jul 2008",
+    "Runtime": "152 min",
+    "Genre": "Action, Adventure, Crime",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)",
+    "Actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+    "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+    "Language": "English, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    "Metascore": "82",
+    "imdbRating": "9.0",
+    "imdbVotes": "1,652,832",
+    "imdbID": "tt0468569",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Batman Begins",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "15 Jun 2005",
+    "Runtime": "140 min",
+    "Genre": "Action, Adventure",
+    "Director": "Christopher Nolan",
+    "Writer": "Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)",
+    "Actors": "Christian Bale, Michael Caine, Liam Neeson, Katie Holmes",
+    "Plot": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.",
+    "Language": "English, Urdu, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
+    "Metascore": "70",
+    "imdbRating": "8.3",
+    "imdbVotes": "972,584",
+    "imdbID": "tt0372784",
+    "Type": "movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Avatar",
+    "Year": "2009",
+    "Rated": "PG-13",
+    "Released": "18 Dec 2009",
+    "Runtime": "162 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "Actors": "Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang",
+    "Plot": "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "Language": "English, Spanish",
+    "Country": "USA, UK",
+    "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
+    "Poster": "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+    "Metascore": "83",
+    "imdbRating": "7.9",
+    "imdbVotes": "876,575",
+    "imdbID": "tt0499549",
+    "Type": "movie",
+    "Response": "True"
+  }
+];
+// using a for loop to retrieve titles and ratings
+
+function retrieve(arr){
+let newArr = [];
+for(var i = 0; i < arr.length;i++){
+    newArr.push({title:arr[i]['Title'], rating: arr[i]['imdbRating']});
+}
+return newArr
+}
+// new list of movies
+var newMovieList = retrieve(watchList);
+console.log(JSON.stringify(newMovieList));
+
+// using the MAP method
+const newMovies_List = watchList.map(item => ({
+    title : item['Title'],
+    rating: item['imdbRating']
+}))
+console.log(JSON.stringify(newMovies_List));
+// Map method 2
+
+const new_Movie_list = watchList.map(({Title : title, imdbRating : rating })=>({title , rating}));
+console.log(new_Movie_list);
+
+// using the map and filter method for a 8.0 and hogher rating
+
+var filteredList = watchList.map(
+    movie =>{
+        return{
+            title:movie.Title,
+            rating: movie.imdbRating
+        }
+    }
+).filter(movie => {
+    return parseFloat(movie.rating) >= 8;
+})
+console.log('My filtered list 1 ' + JSON.stringify(filteredList))
+
+//diffrent approach
+
+var filtered_List = watchList.map(
+    function (e){
+        return{
+            title:e['Title'],
+            rating:e['imdbRating']
+        }
+    }
+).filter((e) => e.rating >=8);
+console.log(filtered_List);
+// .Reduce method
+// using map,filter,reduce
+
+const getAveragerating = (watchList) => {
+    var  getAverage_rating;
+getAverage_rating = watchList.filter(film => film.Director === 'Christopher Nolan')
+.map(film => Number(film.imdbRating)).reduce((sum,rating) => 
+    sum + rating
+)/
+watchList.filter(film => film.Director === 'Christopher Nolan').length;
+
+return getAverage_rating;
+}
+console.log(getAveragerating(watchList))
+
+//ONLY REDUCE MERTH
+
+const onlyReduce = (watchList) => {
+    var count = 0;
+    var getAverage = watchList.reduce((sum,film) =>{
+        if(film.Director === 'Christopher Nolan'){
+            count += 1;
+            return sum + parseFloat(film.imdbRating);
+        }
+       return sum 
+    },0)/ count;
+    return getAverage;
+}
+
+console.log(onlyReduce(watchList));
+
+// return an array after filter and maping its elements
+
+const retArray = (arr) => {
+    let newArr = [...arr]
+    return newArr.filter(film => film.Year >= '2008').map(film => film.Year.replace(film.Year,'2020'));
+}
+
+console.log(retArray(watchList));
+// function that returns a sliced string from back and forth with 3 characters and more
+
+const makeNewString = (str) => 
+str.length < 3 ? str : str.slice(0,3) + str.slice(-3);
+// ? is the return operator
+// : is the else operator
+console.log(makeNewString('abcdefghi'))
+// OR
+const makeNew_string = (str) => {
+    let newstr = ''
+    if(str.length < 3){
+        return str
+    }else{
+       newstr += str.slice(0,3) + str.slice(-3) 
+    }
+    return newstr;
+}
+console.log(makeNew_string('howareyou'))
+// return the first half of a string as long as its length is even not odd
+
+const retNewstr =(str) => {
+    let newstr =''
+    newstr += str.slice(0,str.length / 2);
+    return newstr;
+}
+console.log(retNewstr('temple'))
+console.log(retNewstr('judgement'))
+
+// removefirst charfrom a string 
+const removeFirst = (str1,str2) => 
+str1.slice(1) + str2.slice(1);
+// OR
+console.log(removeFirst('junior','developer'))
+// find the nearest number to 100
+
+const nextto100 = (a , b) => {
+    if((100 - a) < (100 - b) ){
+        return a;
+    }else {
+        return b;
+    }
+}
+//OR 
+const nextTo100 = (a,b) => 
+(100 - a) < (100-b) ? a:b;
+
+console.log(nextTo100(43,67));
+console.log(nextto100(67,99))
+console.log(nextto100(75,75.5))
+console.log(nextto100(5,2))
+
+// function to return true if a string contains 2 or more characters specified
+
+const getCharLength = (str, char) => 
+str.split('').filter(item => item === char).length;
+
+const findchar20r4 = (str,char) => 
+getCharLength(str,char ) > 2 && getCharLength(str,char) < 4;
+
+console.log(findchar20r4('ooohh','o'))
+console.log(findchar20r4('oooooohh','o'))
+console.log(findchar20r4('biiigg','i'))
+
+// get the missing character is a charcode
+//ie (abcdefh) is missing 'g'
+// we return g here
+
+const getmissingchar =(str) => {
+    //for loop to get all characters at 'I' index
+    for(var i=0; i<str.length;i++){
+        // create a  character
+        var code = str.charCodeAt(i)
+        if(code !== str.charCodeAt(0) + i){
+            return String.fromCharCode(code -1)
+        }
+    }
+    return undefined;
+}
+console.log('The missing char in '+getmissingchar('abcdf'))
+</script>
+    
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="d_emo"></p>
+ 
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("d_emo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "demo_post.asp", true);
+  xhttp.send();
+}
+</script>
+
+</div>
+<h4>So the encode/decode extension changes characters to their HTML entities</h4>
+<p>EG:</p>
+<p>this is a &lt;span&gt;&lt;/span&gt; tag</p>
+<p>This is a &lt;div&gt;&lt;/div&gt; tag</p>
+<p>Got to the command palete, into string encode to HTML</p>
+<script src="./weekendtrials.js"></script>
+</body>
+</html>

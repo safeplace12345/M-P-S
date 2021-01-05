@@ -1,0 +1,7 @@
+1) Create a data.html and add ONLY the following data:
+
+<div>
+    <p>Some Data</p>
+</div>
+
+2) Get the data.html using XHR and manipulate it via the .responseText

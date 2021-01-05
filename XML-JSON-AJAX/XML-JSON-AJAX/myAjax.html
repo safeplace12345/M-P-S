@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-Ajax-XML</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-transform: capitalize;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid gray
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>title</th>
+            <th>year</th>
+            <th>genre</th>
+            <th>director</th>
+        </tr>
+    </table>
+
+    <script>
+        // Xml and Ajax on local storage
+
+        const xml = `
+       <address>
+           <street>Roble Ave</street>
+           <mtfcc>S1400</mtfcc>
+           <streetNumber>649</streetNumber>
+           <lat>37.45127</lat>
+           <lng>-122.18032</lng>
+           <distance metric="miles">0.04</distance>
+           <postalcode>94025</postalcode>
+           <placename>Menlo Park</placename>
+           <adminCode2>081</adminCode2>
+           <adminName2>San Mateo</adminName2>
+           <adminCode1>CA</adminCode1>
+           <adminName1>California</adminName1>
+           <countryCode>US</countryCode>
+       </address>
+       `
+        const getXmlData = (doc) => {
+            const parser = new DOMParser();
+            const XmlDoc = parser.parseFromString(doc, 'text/xml')
+            const children = XmlDoc.children[0].children;
+            console.log(children);
+            const Arr = Array.from(children);
+            console.log(Arr);
+
+            console.log(XmlDoc.querySelector('distance').getAttribute('metric'))
+            console.log(children[12].textContent)
+
+            Arr.forEach((child) => {
+                // console.log(child)
+            })
+        }
+        getXmlData(xml)
+
+        // Xml and Ajax on cloud storage
+
+        const getXmlDataFromServer = () => {
+            const xhr = new XMLHttpRequest()
+            let un_parsed_data;
+            let parsed_data;
+            xhr.open('GET', 'movies.xml');
+
+            xhr.onload = (event) => {
+                un_parsed_data = event.currentTarget.responseText
+                parsed_data = event.currentTarget.responseXML;
+                console.log(un_parsed_data)
+                console.log(parsed_data)
+
+                // dom parser
+
+                const parser = new DOMParser();
+
+                const data = parser.parseFromString(un_parsed_data, 'text/xml')
+
+                const children = Array.from(data.children[0].children)
+                console.log(children)
+                load_data(children)
+            }
+            xhr.onerror = (event) => {
+                alert('Error')
+            }
+
+            xhr.send()
+        }
+        getXmlDataFromServer()
+        const load_data = (arg) => {
+            arg.forEach(child => {
+                const title = child.querySelector('title').textContent;
+                const year = child.querySelector('year').textContent;
+                const genre = child.querySelector('genre').textContent;
+                const director = child.querySelector('director').textContent;
+                create_td_And_tr(title, year, genre, director)
+
+            })
+        }
+        const create_td_And_tr = (tit, yr, gr, dr) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>${tit}</td>
+            <td>${yr}</td>
+            <td>${gr}</td>
+            <td>${dr}</td>`
+
+            document.querySelector('table').appendChild(tr)
+        }
+    </script>
+</body>
+
+</html>

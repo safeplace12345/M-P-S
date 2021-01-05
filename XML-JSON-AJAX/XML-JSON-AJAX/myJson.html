@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-JSON-AJAX</title>
+</head>
+
+<body>
+    <h1>My-JSON-AJAX</h1>
+    <ul></ul>
+    <script>
+        const xhr = new XMLHttpRequest()
+        const engineStart = () => {
+            xhr.open('GET', 'movie.json');
+            xhr.onload = function (event) {
+
+
+                const data = xhr.responseText;
+                const parsedData = JSON.parse(data);
+                console.log(parsedData)
+                let newArray = [];
+                newArray.push(parsedData)
+                displayData(newArray)
+            }
+            xhr.send();
+        }
+        const displayData = (arg) => {
+            arg.forEach(element => {
+                let title, year, genre;
+                title = element.title;
+                year = element.year;
+                genre = element.genre;
+                const li = document.createElement('li');
+                li.innerHTML = `<p>${title}</p>
+       <p>${year}</p>
+       <p>${genre}</p>`
+                document.querySelector('ul').appendChild(li)
+            });
+        }
+        engineStart();
+    </script>
+</body>
+
+</html>

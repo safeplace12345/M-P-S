@@ -1,0 +1,65 @@
+#main{
+    background-color:coral;
+}
+#header{
+    position: relative;
+    height:20vh ;
+    padding: 20px;
+    background-color:chocolate;
+}
+#changebg{
+    position: absolute;
+      bottom: 0px;
+      left: 0px;
+}
+#revert{
+    position: absolute;
+      bottom: 0px;
+      right:0px;
+}
+#mouse{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+align-content: space-around;
+}
+
+#onmouseover{
+    background-color: aqua;
+   width: 250px;
+    height: auto;
+ padding: 20px;
+  font-size: 2rem;
+   
+}
+#mousedown{
+    background-color: #00ff2a;
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    font-size: 2rem;
+    
+}
+#contain1{
+    border: 3px solid black ;
+     padding: 50px
+     
+}
+#response{
+    position: relative;
+}
+#span{
+    font-size: 4rem;
+    position: absolute;
+    top: 3%;
+    right: 0px;
+}
+.alerts{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}

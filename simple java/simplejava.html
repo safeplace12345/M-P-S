@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Javascript</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="java.js"></script>
+</head>
+<body style="background-color:#FF90E5">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-4" style="border: solid 3px #000">
+<h1 class="text text-center">If, else if, else statement</h1>
+<p>If time is less than 10:00, create a "Good morning" greeting, 
+if not, but time is less than 20:00, 
+create a "Good day" greeting, otherwise a "Good evening":</p>
+<pre>if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}</pre>
+<button type="button" class="btn btn-success btn1">Click here</button>
+<p style="background-color:#fff;"id="demo"></p>
+
+</div>
+<div class="col-md-8" style="border: solid 3px #000">
+<h2>Switch statements</h2>
+<p>This is how it works:
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+ If there is no match, the default code block is executed.
+Example
+The getDay() method returns the weekday as a number between 0 and 6.
+(Sunday=0, Monday=1, Tuesday=2 ..)
+This example uses the weekday number to calculate the weekday name:</p>
+<pre>switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}</pre>
+<button type="button" class="btn btn-success " onclick=mySwitch()>Click here</button>
+<p id="switch1"></p></div>
+
+</div>
+</div>
+<div class="row">
+<div class="col-md-4" style="border: solid 3px #000">
+<h2 class="text text-center">For Loops</h2>
+<p>The for loop has the following syntax:
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+
+Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.</p>
+<pre>const cars1 =["Ford","Volvo","Toyota","Rover"]
+function loops(){
+	var i ;
+	var text ="This is a ";
+	var len = cars1.length;
+	for (i = 0 ;i < len;i++ ){
+		text += cars1[i] + "<br>";
+	}
+	document.getElementById('loop').innerHTML = text;
+}</pre>
+<button type="button" class="btn btn-success" onclick="loops()">Click me</button>
+<p id="loop"></p>
+</div>
+<div class="col-md-4" style="border: solid 3px #000">
+<h2>While and do while loops</h2>
+<p>The while loop loops through a block of code as long as a specified condition is true.
+Syntax</p><pre>
+while (condition) {
+  // code block to be executed
+}</pre>
+<button type="button" class="btn btn-success" onclick="whileloop()">Click me</button>
+<p id="whileloop"></p>
+
+<h3>Do while loop</h3>
+<p>The example below uses a do/while loop. 
+The loop will always be executed at least once, 
+even if the condition is false, because the 
+code block is executed before the condition is tested</p>
+
+<pre>do {
+  text += "The number is " + i;
+  i++;
+}
+while (i < 10); </pre>
+<button type="button" class="btn btn-success" onclick="dowhileloop()">Click me</button>
+<p id ="dowhile"></p></div>
+<div class="col-md-4" style="border: solid 3px #000">
+<h2>JSON</h2>
+<h2>Convert a string written in JSON format, into a JavaScript object.</h2>
+
+<p id="test"></p>
+<script>
+var myStuff = '{"name":"John","age":"25","city":"Dallas"}';
+var myJson = JSON.parse(myStuff);
+document.getElementById('test').innerHTML = "This is our output in Javascript format " + myJson.name;
+</script>
+<h2>Convert a string from ,a JavaScript object. to a JSON format</h2>
+
+<!--<p id="test2"></p>-->
+<script>
+var myStuff1 = {name:"John",age:"25",city:"Dallas"};
+var myJson1 = JSON.stringify(myStuff1);
+//document.getElementById('test2').innerHTML = "This is our output in Javascript format " +result;
+</script>
+
+
+</div>
+<p id="test2"></p>
+<script>
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+
+var  result;
+if('Alan' in obj &&
+	'Ryan' in obj &&
+	'Jeff' in obj &&
+	'Sarah' in obj 
+){
+ result = true;
+
+ ;
+}
+return result;
+}
+document.getElementById('test2').innerHTML = "This is our output in Javascript format " +result;
+</script>
+
+</div>
+<script src="simplejava.js"></script>
+</body>
+</html>

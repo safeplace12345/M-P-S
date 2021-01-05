@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xml = `
+            <address>
+                <street>Roble Ave</street>
+                <mtfcc>S1400</mtfcc>
+                <streetNumber>649</streetNumber>
+                <lat>37.45127</lat>
+                <lng>-122.18032</lng>
+                <distance metric="miles">0.04</distance>
+                <postalcode>94025</postalcode>
+                <placename>Menlo Park</placename>
+                <adminCode2>081</adminCode2>
+                <adminName2>San Mateo</adminName2>
+                <adminCode1>CA</adminCode1>
+                <adminName1>California</adminName1>
+                <countryCode>US</countryCode>
+            </address>   
+        `
+        const parser = new DOMParser(); // Initialize a new DOM parser using the contructor
+        const xmlDoc = parser.parseFromString( 
+            xml,        /* 1st argument: content */
+            "text/xml"  /* 2nd argument: MIME type: category/subcategory */
+        );
+        console.log( xmlDoc );
+
+        // Get the <distance> tag and get its metric attribute value
+        console.log(
+            xmlDoc.querySelector("distance").getAttribute("metric")
+        );
+        // Get the last element child from the lastchild of <address>
+        // and get its text content:
+        console.log(
+            xmlDoc.lastChild.lastElementChild.textContent
+        );
+        // Get the children's list from the XML, and then get the children
+        // of that element (Returns and HTMLCollection)
+        console.log(
+            xmlDoc.children[0].children
+        );
+        const children = xmlDoc.children[0].children;
+        // 1) Loop via for .. loop, just like in Arrays
+        // 2) Convert to Array and use all the methods available
+        Array.from( children ).forEach((child)=>{
+            // console.log( "<" + child.nodeName + ">", child.textContent );
+        });
+        console.clear();
+
+        // Doing our first XMLHttpRequest: Getting XML from a Server (asynchronously)
+        const xhr = new XMLHttpRequest(); // 1) We want to initialize a new HTTP request
+        // .open( HTTP_METHOD, URL )
+        console.log(1);
+        let moviesData;
+        xhr.open( "GET", "movies.xml" );
+        // xhr.addEventListener("load", function( event ){ ... })
+        xhr.onload = function( event ){
+            // BEWARE: OUR FINAL DATA CAN ONLY BE FOUND HERE!!!
+            // This is the ONLY place where you should place the code
+            // that needs the movies data!
+            // xhr === event.currentTarget
+            console.log("Loaded", event.currentTarget );
+            const textData = event.currentTarget.responseText; // Needs parsing using the DOMParser
+            const xmlData  = event.currentTarget.responseXML;  // This is already parsed as an XML
+            // xmlData is automatically gone through: DOMParser() -> parseFromString(...)
+            console.log( textData, xmlData );
+            
+            displayMoviesFromXML( xmlData );
+            // .getElementsByTagName
+            // moviesData = "Loaded data in here";
+            // 1) Parse the XML
+            // 2) Get all the <movie> elements
+            // 3) Iterate over them and display in the page
+
+            const newParser = new DOMParser();
+            const moviesData = newParser.parseFromString( textData, "text/xml"); 
+            const children = moviesData.children[0].children;
+            console.log( children ); // <-- Private variable
+            window.moviesData = moviesData; // <-- Made global via window object
+            Array.from( children ).forEach((child)=>{
+                const title = child.querySelector("title").textContent;
+                const year  = child.querySelector("year").textContent;
+                console.log( title );
+                const div = document.createElement("div");
+                div.innerHTML = `
+                    <p>${child.nodeName}</p>
+                    <p>Title: ${title}</p>
+                    <p>Year: ${year}</p>
+                `
+                document.body.appendChild( div );
+            })
+        }
+        function displayMoviesFromXML( xml ){}
+        xhr.send(); // <-- Async!
+        console.log(2);
+        // console.log( ">>", moviesData ); // <!-- WRONG point to look for the Ajax data... :(
+</script>
+</body>
+</html>
